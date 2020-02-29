@@ -1,15 +1,15 @@
 {
   "esm/history.js": {
-    "bundled": 28076,
-    "minified": 12353,
-    "gzipped": 3575,
+    "bundled": 29008,
+    "minified": 12920,
+    "gzipped": 3792,
     "treeshaked": {
       "rollup": {
-        "code": 208,
-        "import_statements": 132
+        "code": 229,
+        "import_statements": 153
       },
       "webpack": {
-        "code": 1324
+        "code": 1378
       }
     }
   },

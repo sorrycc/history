@@ -5,7 +5,7 @@ import replace from 'rollup-plugin-replace';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import { uglify } from 'rollup-plugin-uglify';
 
-import pkg from './package.json';
+const pkgName = 'history';
 
 const input = './modules/index.js';
 const globalName = 'History';
@@ -17,7 +17,7 @@ function external(id) {
 const cjs = [
   {
     input,
-    output: { file: `cjs/${pkg.name}.js`, format: 'cjs' },
+    output: { file: `cjs/${pkgName}.js`, format: 'cjs' },
     external,
     plugins: [
       babel({ exclude: /node_modules/ }),
@@ -26,7 +26,7 @@ const cjs = [
   },
   {
     input,
-    output: { file: `cjs/${pkg.name}.min.js`, format: 'cjs' },
+    output: { file: `cjs/${pkgName}.min.js`, format: 'cjs' },
     external,
     plugins: [
       babel({ exclude: /node_modules/ }),
@@ -39,7 +39,7 @@ const cjs = [
 const esm = [
   {
     input,
-    output: { file: `esm/${pkg.name}.js`, format: 'esm' },
+    output: { file: `esm/${pkgName}.js`, format: 'esm' },
     external,
     plugins: [
       babel({
@@ -55,7 +55,7 @@ const esm = [
 const umd = [
   {
     input,
-    output: { file: `umd/${pkg.name}.js`, format: 'umd', name: globalName },
+    output: { file: `umd/${pkgName}.js`, format: 'umd', name: globalName },
     plugins: [
       babel({
         exclude: /node_modules/,
@@ -70,7 +70,7 @@ const umd = [
   },
   {
     input,
-    output: { file: `umd/${pkg.name}.min.js`, format: 'umd', name: globalName },
+    output: { file: `umd/${pkgName}.min.js`, format: 'umd', name: globalName },
     plugins: [
       babel({
         exclude: /node_modules/,
