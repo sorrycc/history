@@ -22,5 +22,29 @@
     "bundled": 30384,
     "minified": 9993,
     "gzipped": 3501
+  },
+  "esm/history-with-query.js": {
+    "bundled": 29008,
+    "minified": 12920,
+    "gzipped": 3792,
+    "treeshaked": {
+      "rollup": {
+        "code": 229,
+        "import_statements": 153
+      },
+      "webpack": {
+        "code": 1378
+      }
+    }
+  },
+  "umd/history-with-query.js": {
+    "bundled": 45385,
+    "minified": 16968,
+    "gzipped": 5680
+  },
+  "umd/history-with-query.min.js": {
+    "bundled": 42748,
+    "minified": 15018,
+    "gzipped": 5244
   }
 }

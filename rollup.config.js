@@ -98,7 +98,7 @@ switch (process.env.BUILD_ENV) {
     config = umd;
     break;
   default:
-    config = cjs.concat(esm).concat(umd);
+    config = cjs.concat(esm);
 }
 
 export default config;

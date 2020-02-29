@@ -32,6 +32,7 @@
     "test": "karma start --single-run"
   },
   "dependencies": {
+    "query-string": "^6.11.0",
     "@babel/runtime": "^7.1.2",
     "loose-envify": "^1.2.0",
     "resolve-pathname": "^3.0.0",

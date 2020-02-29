@@ -1,5 +1,6 @@
 import resolvePathname from 'resolve-pathname';
 import valueEqual from 'value-equal';
+import querystring from "query-string";
 
 import { parsePath } from './PathUtils.js';
 
@@ -8,6 +9,7 @@ export function createLocation(path, state, key, currentLocation) {
   if (typeof path === 'string') {
     // Two-arg form: push(path, state)
     location = parsePath(path);
+    location.query = location.search ? querystring.parse(location.search) : {};
     location.state = state;
   } else {
     // One-arg form: push(location)
@@ -18,8 +20,10 @@ export function createLocation(path, state, key, currentLocation) {
     if (location.search) {
       if (location.search.charAt(0) !== '?')
         location.search = '?' + location.search;
+      location.query = querystring.parse(location.search);
     } else {
-      location.search = '';
+      location.search = location.query ? querystring.stringify(location.query) : '';
+      location.query = location.query || {};
     }
 
     if (location.hash) {

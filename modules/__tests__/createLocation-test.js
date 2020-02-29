@@ -8,6 +8,9 @@ describe('createLocation', () => {
         expect(createLocation('/the/path?the=query#the-hash')).toMatchObject({
           pathname: '/the/path',
           search: '?the=query',
+          query: {
+            the: 'query',
+          },
           hash: '#the-hash'
         });
       });
@@ -24,6 +27,9 @@ describe('createLocation', () => {
         ).toMatchObject({
           pathname: '/the/path',
           search: '?the=query',
+          query: {
+            the: 'query',
+          },
           hash: '#the-hash'
         });
       });
