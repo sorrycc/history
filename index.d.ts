@@ -32,6 +32,7 @@ export interface Location<S = LocationState> {
     state: S;
     hash: Hash;
     key?: LocationKey;
+    query?: {[key: string]: any};
 }
 
 export interface LocationDescriptorObject<S = LocationState> {
