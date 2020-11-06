@@ -1,3 +1,4 @@
+import { ParsedQuery } from 'query-string';
 // Type definitions for history 4.7.2
 // Project: https://github.com/mjackson/history
 // Definitions by: Sergey Buturlakin <https://github.com/sergey-buturlakin>, Nathan Brown <https://github.com/ngbrown>, Young Rok Kim <https://github.com/rokoroku>, Daniel Nixon <https://github.com/danielnixon>
@@ -32,6 +33,7 @@ export interface Location<S = LocationState> {
     state: S;
     hash: Hash;
     key?: LocationKey;
+    query?: ParsedQuery;
 }
 
 export interface LocationDescriptorObject<S = LocationState> {
@@ -40,7 +42,7 @@ export interface LocationDescriptorObject<S = LocationState> {
     state?: S;
     hash?: Hash;
     key?: LocationKey;
-    query?: {[key: string]: any};
+    query?: ParsedQuery;
 }
 
 export namespace History {
